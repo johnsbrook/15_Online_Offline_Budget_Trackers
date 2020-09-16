@@ -24,8 +24,24 @@ self.addEventListener("install", function(event) {
 })
 
 
-// Create self addEventListener() to activate with a function and mapped
-
+// Create self addEventListener() to activate with a function and map keys
+self.addEventListener("activate", function(event) {
+    event.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(
+                keyList.map(key => {
+                    if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+                        console.log("Previous cache data removed", key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+    
+    // Added self.clientes.claim()
+    self.clients.claim();
+});
 
 // Create self addEventListener() to fetch api to clone and store response in cache
 
