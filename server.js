@@ -10,8 +10,12 @@ const PORT = 3000;
 // Declared app to express() method
 const app = express();
 
-// Asked app to use logger("dev"), compression(), urlencoded to true, json() and static();
-
+// Asked app to use logger("dev"), compression(), express urlencoded extended to true, json() and express static() to public;
+app.use(logger("dev"));
+app.use(compression());
+app.use(express.urlencoded({ extended: true }));
+app.use(json());
+app.use(express.static("public"));
 
 // Created mongoose db connection
 
