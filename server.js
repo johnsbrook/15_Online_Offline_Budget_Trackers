@@ -29,3 +29,6 @@ mongoose.connect("mongodb://localhost/budget", {
 // app.use(require("./routes/api.js"));
 
 // Created app listener to run on port 3000
+app.listen(PORT, () => {
+    `App is running on PORT ${PORT}. Click on this link to open app: http://localhost:${PORT}`;
+});
