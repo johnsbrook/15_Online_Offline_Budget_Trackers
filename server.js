@@ -10,11 +10,11 @@ const PORT = 3000;
 // Declared app to express() method
 const app = express();
 
-// Asked app to use logger("dev"), compression(), express urlencoded extended to true, json() and express static() to public;
+// Asked app to use logger("dev"), compression(), express urlencoded extended to true, express json() and express static() to public;
 app.use(logger("dev"));
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
-app.use(json());
+app.use(express.json());
 app.use(express.static("public"));
 
 // Created mongoose db connection
@@ -30,5 +30,5 @@ mongoose.connect("mongodb://localhost/budget", {
 
 // Created app listener to run on port 3000
 app.listen(PORT, () => {
-    `App is running on PORT ${PORT}. Click on this link to open app: http://localhost:${PORT}`;
+    console.log(`App is running on PORT ${PORT}. Click on this link to open app: http://localhost:${PORT}`);
 });
