@@ -18,9 +18,14 @@ app.use(json());
 app.use(express.static("public"));
 
 // Created mongoose db connection
+// App will connect to mongodb://localhost/budget 
+// App will have useNewUrlParser to true and useFindAndModify to false
+mongoose.connect("mongodb://localhost/budget", {
+    useNewUrlParser: true,
+    useFindAndModify: false
+});
 
-
-// Established route
-
+// Established route to require api.js; comment the api route; then uncomment once the file has been built and debugged
+// app.use(require("./routes/api.js"));
 
 // Created app listener to run on port 3000
