@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost/budget", {
 });
 
 // Established route to require api.js; comment the api route; then uncomment once the file has been built and debugged
-// app.use(require("./routes/api.js"));
+app.use(require("./routes/api.js"));
 
 // Created app listener to run on port 3000
 app.listen(PORT, () => {
