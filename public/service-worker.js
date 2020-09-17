@@ -1,5 +1,5 @@
 // Declare an array of FILES_TO_CACHE inside an array of strings
-const FILES_TO_CACHE = ["/", "/index.html", "index.js", "styles.css"];
+const FILES_TO_CACHE = ["/", "db.js", "/index.html", "index.js", "styles.css"];
 
 // Declare CACHE_NAME as static-cache-v2
 const CACHE_NAME = "static-cache-v2";

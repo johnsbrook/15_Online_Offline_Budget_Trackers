@@ -1,34 +1,25 @@
-// Declare mongoose to require "mongoose"
 const mongoose = require("mongoose");
 
-// Declare Schema to mongoose.schema
 const Schema = mongoose.Schema;
 
-// Declare transactionSchema and construct new Schema for name (trimmed and required), value (required), and date (defaulted at Date.now)
 const transactionSchema = new Schema(
-    {
-        name: {
-            type: String,
-            trim: true,
-            required: "Enter transaction name."
-        }
+  {
+    name: {
+      type: String,
+      trim: true,
+      required: "Enter a name for transaction"
     },
-    {
-        value: {
-            type: Number,
-            required: "Enter transaction value."
-        }
+    value: {
+      type: Number,
+      required: "Enter an amount"
     },
-    {
-        date: {
-            type: Date,
-            default: Date.now
-        }
+    date: {
+      type: Date,
+      default: Date.now
     }
+  }
 );
 
-// Declare Transaction module as a mongoose model named "Transaction" using transactionSchema
-const Transaction = mongoose.model("Transaction", transactionSchema)
+const Transaction = mongoose.model("Transaction", transactionSchema);
 
-// Export Transaction module
 module.exports = Transaction;
