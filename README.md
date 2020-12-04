@@ -4,8 +4,7 @@
 
 ## Description 
  
-This budget tracker will allow the user to keep track of expenses and deposits while being online, and when losing connection, the user will continue to be able to post transactions that will be added to the database once the page goes back online.  
-
+This budget tracker is a Node.js that works online and offline with service-worker and will allow the user to keep track of expenses and deposits while being online, and when losing connection, the user will continue to be able to post transactions that will be added to the database once the page goes back online.
 
 ## Table of Contents 
 
